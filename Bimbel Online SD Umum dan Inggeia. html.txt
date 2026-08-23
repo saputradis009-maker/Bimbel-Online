@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimbel Online SD & Bahasa Inggris - Belajar Seru & Berprestasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4D96FF;
+            --accent-color: #6BCB77;
+            --warning-color: #FFD93D;
+            --purple-color: #9B51E0;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --bg-light: #F9F9FF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+        }
+        .logo span { color: var(--primary-color); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E6FFFD 0%, #FFF6BF 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 0 auto 30px auto;
+            max-width: 700px;
+            color: #556779;
+            font-weight: 500;
+        }
+
+        /* Button WhatsApp */
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .btn-wa:hover {
+            transform: scale(1.05);
+            background-color: #20ba59;
+        }
+
+        /* Section Global */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 6px;
+            background-color: var(--warning-color);
+            margin: 10px auto 0 auto;
+            border-radius: 10px;
+        }
+
+        /* Grid Layouts */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            border: 2px solid #F0F4F8;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--purple-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn-card {
+            display: block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn-card:hover {
+            background-color: #357ae8;
+        }
+
+        /* Mapel Umum Section */
+        .mapel-section {
+            background-color: #F0F4F8;
+            border-radius: 40px;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 650px;
+            margin: 15px auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+            .section-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Belajar<b>Pintar</b><span>Kids</span></a>
+            <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20tanya%20informasi%20kelas%20online" class="btn-wa" style="padding: 8px 18px; font-size: 13px; box-shadow: none;">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Kelas Online <span>Bahasa Inggris & Pelajaran SD</span> Interaktif!</h1>
+            <p>Bantu putra-putri Anda meraih prestasi terbaik dan mahir berbahasa Inggris sejak dini dengan metode belajar yang seru, ramah anak, dan tanpa stres.</p>
+            <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20mau%20konsultasi%20pendaftaran%20kelas%20online" class="btn-wa">
+                📲 Konsultasi Gratis via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section id="english" class="container">
+        <h2 class="section-title">Program Bahasa Inggris</h2>
+        <div class="grid-cards">
+            
+            <div class="card">
+                <div>
+                    <div class="card-icon">🌱</div>
+                    <h3>Level Pemula</h3>
+                    <p>Fokus pengenalan kosakata dasar, abjad, angka, warna, serta pengucapan awal yang menyenangkan lewat lagu dan cerita.</p>
+                </div>
+                <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Bahasa%20Inggris%20Level%20Pemula" class="btn-card">Daftar Level Pemula</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-icon">🌿</div>
+                    <h3>English Level 1</h3>
+                    <p>Mulai menyusun kalimat sederhana, merespons instruksi pendek, dan membangun rasa percaya diri saat berbicara sehari-hari.</p>
+                </div>
+                <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Bahasa%20Inggris%20Level%201" class="btn-card">Daftar Level 1</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-icon">🌳</div>
+                    <h3>English Level 2</h3>
+                    <p>Pengembangan percakapan aktif (speaking focus), membaca cerita pendek, serta peningkatan pemahaman listening.</p>
+                </div>
+                <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Bahasa%20Inggris%20Level%202" class="btn-card">Daftar Level 2</a>
+            </div>
+
+            <div class="card">
+                <span class="card-tag">Lanjutan</span>
+                <div>
+                    <div class="card-icon">🏆</div>
+                    <h3>English Level 3</h3>
+                    <p>Latihan tata bahasa (grammar) praktis, tata cara menulis kreatif, dan presentasi singkat secara mandiri dengan lancar.</p>
+                </div>
+                <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Bahasa%20Inggris%20Level%203" class="btn-card" style="background-color: var(--primary-color);">Daftar Level 3</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="general-subject" class="mapel-section">
+        <div class="container">
+            <h2 class="section-title">Mata Pelajaran Umum SD</h2>
+            <div class="grid-cards">
+                
+                <div class="card">
+                    <div>
+                        <div class="card-icon">✏️</div>
+                        <h3>Pendampingan Kelas 1 - 3 SD</h3>
+                        <p>Fokus pada penguatan membaca, menulis, berhitung (calistung), serta pemahaman konsep dasar Matematika dan Tematik.</p>
+                    </div>
+                    <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Mata%20Pelajaran%20Umum%20Kelas%201-3%20SD" class="btn-card">Tanya Kelas 1-3 SD</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-icon">📐</div>
+                        <h3>Pendampingan Kelas 4 - 6 SD</h3>
+                        <p>Bimbingan mendalam untuk Matematika, IPA, IPS, dan persiapan menghadapi ujian sekolah dengan metode pemahaman konsep.</p>
+                    </div>
+                    <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Kelas%20Mata%20Pelajaran%20Umum%20Kelas%204-6%20SD" class="btn-card">Tanya Kelas 4-6 SD</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-icon">📝</div>
+                        <h3>Bimbingan PR & Ujian</h3>
+                        <p>Bantuan intensif pembahasan soal-soal tugas sekolah dan persiapan ujian akhir semester agar nilai makin maksimal.</p>
+                    </div>
+                    <a href="https://wa.me/6285113063673?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20Program%20Bimbingan%20PR%20dan%20Ujian" class="btn-card">Tanya Bimbingan PR</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Apa Kata Orang Tua?</h2>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Anak saya jadi jauh lebih percaya diri berbicara bahasa Inggris sejak ikut Level 1. Metodenya ramah anak dan gurunya telaten sekali!"</p>
+            <p class="testimonial-author">— Bunda Ani, Orang Tua Siswa</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Nilai Matematika dan IPA anak saya meningkat pesat setelah rutin pendampingan belajar online di sini. Sangat membantu tugas sekolahnya!"</p>
+            <p class="testimonial-author">— Pak Budi, Orang Tua Siswa</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 BelajarPintarKids. All Rights Reserved.</p>
+            <p style="margin-top: 8px; font-size: 12px; color: #aaa;">Dibuat untuk mencerdaskan generasi muda Indonesia.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
